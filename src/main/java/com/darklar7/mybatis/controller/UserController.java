@@ -29,7 +29,7 @@ public class UserController {
 
 	@GetMapping("user")
 	public PageInfo<User> getAll(){
-		PageHelper.startPage(1,10);
+		PageHelper.startPage(2,5);
 		List<User> list = userService.getAll();
 		return new PageInfo<>(list);
 	}
