@@ -4,6 +4,7 @@ server:
 logging:
     level:
         tk.mybatis: debug
+        com.darklar7.mybatis.mapper: debug
 spring:
   datasource:
     druid:
