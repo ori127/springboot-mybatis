@@ -8,4 +8,10 @@ import org.springframework.stereotype.Component;
 @Mapper
 @Component
 public interface UserMapper extends MyMapper<User> {
+	/**
+	 * 根据用户名获取单个用户信息
+	 * @param username
+	 * @return
+	 */
+	User findByUsername(String username);
 }

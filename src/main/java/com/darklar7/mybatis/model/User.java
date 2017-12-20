@@ -1,12 +1,14 @@
 package com.darklar7.mybatis.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Transient;
+import java.util.List;
 
-@Getter
-@Setter
+@Data
 public class User {
     /**
      * id
@@ -24,4 +26,10 @@ public class User {
      * 密码
      */
     private String password;
+
+    /**
+     * 角色
+     */
+    @Transient
+    private List<String> roles;
 }

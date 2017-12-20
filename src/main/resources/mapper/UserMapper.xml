@@ -9,4 +9,11 @@
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
   </resultMap>
+
+  <select id="findByUsername" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT id,username,password
+    FROM user
+    WHERE username = #{usernmae,jdbcType=VARCHAR}
+
+  </select>
 </mapper>
