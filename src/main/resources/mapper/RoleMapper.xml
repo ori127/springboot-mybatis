@@ -8,4 +8,20 @@
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="role" jdbcType="VARCHAR" property="role" />
   </resultMap>
+
+  <sql id="Base_Column_List">
+    r.id, role
+  </sql>
+
+  <sql id="LEFT_JOIN_User_Roles">
+    LEFT JOIN  user_roles ur on r.id = ur.role_id
+  </sql>
+
+  <select id="findByUserId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM role r
+    <include refid="LEFT_JOIN_User_Roles"/>
+    WHERE ur.user_id = #{userid,jdbcType=BIGINT}
+  </select>
 </mapper>
