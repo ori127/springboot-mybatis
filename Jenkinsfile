@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('say hellow') {
       steps {
-        sh 'echo "helloWord"'
+        sh 'echo "helloWord" pwd'
+        sh 'pwd'
       }
     }
   }
